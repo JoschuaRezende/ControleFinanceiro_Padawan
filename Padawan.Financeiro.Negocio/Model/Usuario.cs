@@ -10,7 +10,7 @@ namespace Padawan.Financeiro.Negocio.Model
 
         public string Cpf { get; set; }
 
-        public string Cep { get; set; }
+        public string CEP { get; set; }
 
         public string Complemento { get; set; }
     }
