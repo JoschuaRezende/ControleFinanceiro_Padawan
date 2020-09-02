@@ -11,7 +11,7 @@ namespace Tests
         {
         }
 
-
+        [Test]
         public void ValorSaldoInicial()
         {
             Balanco balanco = new Balanco();
