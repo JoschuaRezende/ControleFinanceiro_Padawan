@@ -1,8 +1,6 @@
 ﻿using LiteDB;
-using System.Collections.Generic;
-using System.Linq;
 
-namespace Padawan.Financeiro.Negocio.Model
+namespace Padawan.Financeiro.Negocio.Models
 {
     public class Categoria
     {
@@ -21,16 +19,15 @@ namespace Padawan.Financeiro.Negocio.Model
 
         public void Add(CategoriaModel operacao)
         {
-            using (var db = new LiteDatabase("banco.db"))
+            using (var db = new LiteDatabase(@"C:\Users\joschua.silva\Documents\GitHub\ControleFinanceiro_Padawan\Banco\Banco.db"))
             {
                 var teste = db.GetCollection<CategoriaModel>();
                 teste.Insert(operacao);
             }
         }
 
-        
-    }
 
+    }
     public class CategoriaModel
     {
         public string Descricao { get; set; }

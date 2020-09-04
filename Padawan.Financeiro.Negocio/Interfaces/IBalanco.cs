@@ -1,16 +1,12 @@
-﻿using Padawan.Financeiro.Negocio.Model;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Padawan.Financeiro.Negocio.Interfaces
 {
     public interface IBalanco
     {
-
         void Add(IOperacao operacao);
         void Delete(IOperacao operacao);
-        List<IOperacao> Operacoes { get;}
+        List<IOperacao> Operacoes { get; }
         double Saldo { get; }
     }
 }

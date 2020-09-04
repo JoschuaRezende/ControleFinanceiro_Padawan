@@ -1,4 +1,4 @@
-﻿using Padawan.Financeiro.Negocio.Model;
+﻿using Padawan.Financeiro.Negocio.Models;
 using System;
 
 namespace Padawan.Financeiro.Negocio.Interfaces

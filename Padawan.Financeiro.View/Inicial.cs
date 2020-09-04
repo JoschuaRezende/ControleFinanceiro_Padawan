@@ -23,7 +23,7 @@ namespace Padawan.Financeiro.View
 
         private void Financeiro_Click(object sender, EventArgs e)
         {
-            FormsForm1 formsFinanceiro = new FormsForm1();
+            FormsBalanco formsFinanceiro = new FormsBalanco();
             formsFinanceiro.ShowDialog();
         }
     }
