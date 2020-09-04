@@ -35,14 +35,14 @@ namespace Padawan.Financeiro.Negocio
             return result;
         }
 
-        public void Add(IOperacao operacao)
-        {
-            using (var db = new LiteDatabase(@"C:\Users\joschua.silva\Documents\GitHub\ControleFinanceiro_Padawan\Banco\Banco.db"))
-            {
-                var teste = db.GetCollection<IOperacao>();
-                teste.Insert(operacao);
-            }
-        }
+        //public void Add(IOperacao operacao)
+        //{
+        //    using (var db = new LiteDatabase(@"C:\Users\joschua.silva\Documents\GitHub\ControleFinanceiro_Padawan\Banco\Banco.db"))
+        //    {
+        //        var teste = db.GetCollection<IOperacao>();
+        //        teste.Insert(operacao);
+        //    }
+        //}
 
         public void Delete(IOperacao operacao)
         {

@@ -14,5 +14,24 @@ namespace Padawan.Financeiro.Negocio.Banco
             }
 
         }
+
+        public void Add(T obj)
+        {
+            using (var db = new LiteDatabase(@"C:\Users\joschua.silva\Documents\GitHub\ControleFinanceiro_Padawan\Banco\Banco.db"))
+            {
+                db.GetCollection<T>().Insert(obj);
+            }
+
+        }
+
+        public void Remove()
+        {
+            using (var db = new LiteDatabase(@"C:\Users\joschua.silva\Documents\GitHub\ControleFinanceiro_Padawan\Banco\Banco.db"))
+            {
+               // return db.GetCollection<T>().FindAll().ToList();
+            }
+
+        }
+
     }
 }

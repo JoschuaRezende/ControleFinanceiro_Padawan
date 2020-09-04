@@ -27,7 +27,7 @@ namespace Padawan.Financeiro.View
 
         private void btn_AdicionarCategoria_Click(object sender, EventArgs e)
         {
-            categoria.Add(new CategoriaModel()
+            banco.Add(new CategoriaModel()
             {
                 Descricao = txt_Categoria.Text
             });

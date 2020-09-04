@@ -32,12 +32,8 @@ namespace Padawan.Financeiro.View
         private void btn_Adicionar_Click(object sender, EventArgs e)
         {
             AdicionarButton();
-            //txt_ListaBalanco.Text = Convert.ToString(balanco.CalcularSaldo());
-            //foreach (var item in banco2.Listar())
-            //{
-            //    txt_ListaBalanco.Text = item.Descricao;
-             
-            //}
+            txt_ListaBalanco.Text = Convert.ToString(balanco.CalcularSaldo());
+           
         }
 
         public void CarregaCombCategoria()
@@ -60,7 +56,7 @@ namespace Padawan.Financeiro.View
             // como faço isso por tipo e nao passando a string que ela ali dentro pra eu nao fazer if toda vez que eu adicionar algo
             if (cmb_Tipo.Text == "Credito")
             {
-                balanco.Add(new Credito()
+                banco2.Add(new Credito()
                 {
                     Descricao = txt_Descricao.Text,
                     Valor = double.Parse(txt_valor.Text),
@@ -71,7 +67,7 @@ namespace Padawan.Financeiro.View
             }
             if (cmb_Tipo.Text == "Debito")
             {
-                balanco.Add(new Debito()
+                 banco2.Add(new Debito()
                 {
                     Descricao = txt_Descricao.Text,
                     Valor = double.Parse(txt_valor.Text),
