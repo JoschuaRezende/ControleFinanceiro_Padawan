@@ -8,6 +8,9 @@ namespace Padawan.Financeiro.Negocio
 {
     public class Balanco : IBalanco
     {
+        private const string caminho = @"C:\Users\joschua.silva\Documents\GitHub\ControleFinanceiro_Padawan\Banco\";
+        private const string arquivoNome = "BancoFinanceiro.db";
+
         public double Saldo { get => CalcularSaldo(); }
         public List<IOperacao> Operacoes { get; } = new List<IOperacao>();
 
@@ -15,7 +18,7 @@ namespace Padawan.Financeiro.Negocio
         {
             double result = 0;
 
-            using (var db = new LiteDatabase(@"C:\Users\joschua.silva\Documents\GitHub\ControleFinanceiro_Padawan\Banco\Banco.db"))
+            using (var db = new LiteDatabase(caminho+arquivoNome))
             {
                 var teste = db.GetCollection<IOperacao>();
                 var colecao = teste.FindAll();
@@ -46,7 +49,7 @@ namespace Padawan.Financeiro.Negocio
 
         public void Delete(IOperacao operacao)
         {
-            using (var db = new LiteDatabase(@"C:\Users\joschua.silva\Documents\GitHub\ControleFinanceiro_Padawan\Banco\Banco.db"))
+            using (var db = new LiteDatabase(caminho+arquivoNome))
             {
                 var teste = db.GetCollection<IOperacao>();
                 // teste.Delete()

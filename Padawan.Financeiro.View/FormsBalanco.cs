@@ -60,6 +60,7 @@ namespace Padawan.Financeiro.View
                 {
                     Descricao = txt_Descricao.Text,
                     Valor = double.Parse(txt_valor.Text),
+                    //Perguntar para Maestro sobre criação de objeto aqui, como pegar direto no banco
                     Categoria = new Categoria(cmb_Categoria.Text),
                     Data = DateTime.Today
 
