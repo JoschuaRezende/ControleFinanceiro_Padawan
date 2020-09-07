@@ -8,7 +8,7 @@ namespace Padawan.Financeiro.Negocio
 {
     public class Balanco : IBalanco
     {
-        private const string caminho = @"C:\Users\joschua.silva\Documents\GitHub\ControleFinanceiro_Padawan\Banco\";
+        private const string caminho = @"C:\Users\joschua.silva\Documents\GitHub\JoschuaRezende\ControleFinanceiro_Padawan\Banco\";
         private const string arquivoNome = "BancoFinanceiro.db";
 
         public double Saldo { get => CalcularSaldo(); }
@@ -37,6 +37,47 @@ namespace Padawan.Financeiro.Negocio
             }
             return result;
         }
+
+
+        public double CalcularDebitos()
+        {
+            double result = 0;
+            using (var db = new LiteDatabase(caminho + arquivoNome))
+            {
+                var teste = db.GetCollection<IOperacao>();
+                var colecao = teste.FindAll();
+
+                colecao.ToList().ForEach(p =>
+                {
+                    if (p is Debito)
+                    {
+                        result -= p.Valor;
+                    }
+                });
+            }
+            return result;
+        }
+
+        public double CalcularCredito()
+        {
+            double result = 0;
+            using (var db = new LiteDatabase(caminho + arquivoNome))
+            {
+                var teste = db.GetCollection<IOperacao>();
+                var colecao = teste.FindAll();
+
+                colecao.ToList().ForEach(p =>
+                {
+                    if (p is Credito)
+                    {
+                        result += p.Valor;
+                    }
+                });
+            }
+            return result;
+        }
+
+
 
         //public void Add(IOperacao operacao)
         //{

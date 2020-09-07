@@ -12,7 +12,7 @@ namespace Padawan.Financeiro.View
     public partial class FormsBalanco : Form
     {
         private Balanco balanco;
-        private readonly Banco<CategoriaModel> banco;
+        private readonly Banco<Categoria> banco;
         private readonly Categoria categoria;
         private readonly Banco<IOperacao> banco2;
 
@@ -23,16 +23,17 @@ namespace Padawan.Financeiro.View
             InitializeComponent();
             balanco = new Balanco();
             categoria = new Categoria();
-            banco = new Banco<CategoriaModel>();
+            banco = new Banco<Categoria>();
             banco2 = new Banco<IOperacao>();
-            txt_ListaBalanco.Text = Convert.ToString(balanco.CalcularSaldo());
+            ListarValores();
             CarregaCombCategoria();
+            
         }
 
         private void btn_Adicionar_Click(object sender, EventArgs e)
         {
             AdicionarButton();
-            txt_ListaBalanco.Text = Convert.ToString(balanco.CalcularSaldo());
+            ListarValores();
            
         }
 
@@ -79,6 +80,18 @@ namespace Padawan.Financeiro.View
 
             }
 
+        }
+
+        public void ListarValores()
+        {
+            txt_ListaBalanco.Text = Convert.ToString(balanco.CalcularSaldo());
+            txt_Debito.Text = Convert.ToString(balanco.CalcularDebitos());
+            txt_Credito.Text = Convert.ToString(balanco.CalcularCredito());
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

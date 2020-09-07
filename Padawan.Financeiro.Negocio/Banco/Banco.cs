@@ -7,7 +7,7 @@ namespace Padawan.Financeiro.Negocio.Banco
     public class Banco<T>
     {
 
-        private const string caminho = @"C:\Users\joschua.silva\Documents\GitHub\ControleFinanceiro_Padawan\Banco\";
+        private const string caminho = @"C:\Users\joschua.silva\Documents\GitHub\JoschuaRezende\ControleFinanceiro_Padawan\Banco\";
         private const string arquivoNome = "BancoFinanceiro.db";
         public List<T> Listar()
         {

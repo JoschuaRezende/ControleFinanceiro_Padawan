@@ -9,13 +9,13 @@ namespace Padawan.Financeiro.View
 {
     public partial class FormsCategoria : Form
     {
-        private readonly Banco<CategoriaModel> banco;
+        private readonly Banco<Categoria> banco;
         private readonly Categoria categoria;
         public FormsCategoria()
         {
             InitializeComponent();
             categoria = new Categoria();
-            banco = new Banco<CategoriaModel>();
+            banco = new Banco<Categoria>();
             CarregaLista();
         }
 
@@ -27,7 +27,7 @@ namespace Padawan.Financeiro.View
 
         private void btn_AdicionarCategoria_Click(object sender, EventArgs e)
         {
-            banco.Add(new CategoriaModel()
+            banco.Add(new Categoria()
             {
                 Descricao = txt_Categoria.Text
             });
